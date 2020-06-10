@@ -1,27 +1,28 @@
 version: 2
 jobs:
     test:
-        - image: circleci/golang
+        docker:
+            - image: circleci/golang
 
-    working_directory: /go/src/github.com/reecerussell/adaptive-password-hasher
+        working_directory: /go/src/github.com/reecerussell/adaptive-password-hasher
 
-    steps:
-        - checkout
+        steps:
+            - checkout
 
-        - run:
-              name: Installing dependencies
-              command: go mod download
+            - run:
+                  name: Installing dependencies
+                  command: go mod download
 
-        - run:
-              name: Running tests
-              command: go test -v ./... -race -coverprofile=coverage.txt -covermode=atomic
+            - run:
+                  name: Running tests
+                  command: go test -v ./... -race -coverprofile=coverage.txt -covermode=atomic
 
-        - run:
-              name: Uploading coverage report
-              command: bash <(curl -s https://codecov.io/bash)
+            - run:
+                  name: Uploading coverage report
+                  command: bash <(curl -s https://codecov.io/bash)
 
-        - store_artifacts:
-              path: coverage.txt
+            - store_artifacts:
+                  path: coverage.txt
 
 workflows:
     version: 2
