@@ -5,4 +5,4 @@
 
 # Adaptive Password Hasher
 
-<img src="https://media.giphy.com/media/loXfQtPqLxGmbLs9h2/source.gif" align="right" width="40%" alt="A super cool gif" />
+<img src="https://media.giphy.com/media/loXfQtPqLxGmbLs9h2/giphy.gif" align="right" width="40%" alt="A super cool gif" />
