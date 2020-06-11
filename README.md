@@ -17,6 +17,9 @@ Using the pbkdf2 key derivation algorithm, the module has functionality to hash 
 - [Get Started](#get-started)
   - [Defaults](#defaults)
 - [Advanced](#advanced)
+  - [Hash Keys](#hash-keys)
+  - [Setup](#setup)
+- [Info](#info)
 
 ## <span id="installation">Installation</span>
 
