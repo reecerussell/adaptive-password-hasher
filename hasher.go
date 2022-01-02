@@ -162,7 +162,6 @@ func (h *hasher) Verify(pwd, hash []byte) (ok bool) {
 	}
 
 	hashFunc, iterCnt, saltLen := scanHeader(hash)
-	fmt.Printf("%d < %d\n", saltLen, h.saltSize)
 	if saltLen < h.saltSize {
 		// saltLen must be >= to the hasher's salt size.
 		return false
@@ -192,13 +191,10 @@ func scanHeader(buf []byte) (hashAlg func() hash.Hash, iterCnt, saltSize int) {
 		switch i {
 		case 1:
 			hashAlg = alg(v)
-			break
 		case 5:
 			iterCnt = v
-			break
 		case 9:
 			saltSize = v
-			break
 		}
 	}
 
