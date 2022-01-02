@@ -162,7 +162,6 @@ func (h *hasher) Verify(pwd, hash []byte) (ok bool) {
 	}
 
 	hashFunc, iterCnt, saltLen := scanHeader(hash)
-	fmt.Printf("%d < %d\n", saltLen, h.saltSize)
 	if saltLen < h.saltSize {
 		// saltLen must be >= to the hasher's salt size.
 		return false
